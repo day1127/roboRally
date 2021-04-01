@@ -22,14 +22,59 @@ class Robot:
     def moveRight(self):
         self.x += 46
 
+        if self.y > 460:
+            self.y = 460
+            
+        if self.x > 460:
+            self.x = 460
+
+        if self.y < 0:
+            self.y = 0
+
+        if self.x < 0:
+            self.x = 0
     def moveDown(self):
         self.y += 46
 
+        if self.y > 460:
+            self.y = 460
+            
+        if self.x > 460:
+            self.x = 460
+
+        if self.y < 0:
+            self.y = 0
+
+        if self.x < 0:
+            self.x = 0
     def moveLeft(self):
         self.x -= 46
 
+        if self.y > 460:
+            self.y = 460
+            
+        if self.x > 460:
+            self.x = 460
+
+        if self.y < 0:
+            self.y = 0
+
+        if self.x < 0:
+            self.x = 0
     def moveUp(self):
         self.y -= 46
+
+        if self.y > 460:
+            self.y = 460
+            
+        if self.x > 460:
+            self.x = 460
+
+        if self.y < 0:
+            self.y = 0
+
+        if self.x < 0:
+            self.x = 0
 
 if __name__ == "__main__":
     r2d2 = Robot('R2D2')
