@@ -21,10 +21,10 @@ class Robot:
 
     def moveRight(self):
         self.x += 46
-
+    
         if self.y > 460:
             self.y = 460
-            
+
         if self.x > 460:
             self.x = 460
 
@@ -38,7 +38,7 @@ class Robot:
 
         if self.y > 460:
             self.y = 460
-            
+
         if self.x > 460:
             self.x = 460
 
@@ -52,7 +52,7 @@ class Robot:
 
         if self.y > 460:
             self.y = 460
-            
+
         if self.x > 460:
             self.x = 460
 
@@ -66,7 +66,7 @@ class Robot:
 
         if self.y > 460:
             self.y = 460
-            
+
         if self.x > 460:
             self.x = 460
 
