@@ -1,4 +1,4 @@
-
+import random
 """
 move represents type of move
     f = forward
@@ -29,6 +29,7 @@ class Deck:
             priority, move, amount = line.split(', ')
             newCard = Card(priority, move, amount)
             myDeck.append(newCard)
+        random.shuffle(myDeck)
         return myDeck
 
 
@@ -43,8 +44,11 @@ class Deck:
 
 
     def printCard(self):
+        cardNum = 5
         print("this is printed via printCard")
-        print(self.cardList.pop())
+        while cardNum != 0:
+            print(self.cardList.pop())
+            cardNum -=1
 
 
 
