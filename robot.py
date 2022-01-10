@@ -1,3 +1,6 @@
+
+
+
 class Robot:
     def __init__(self, name, x = 0, y = 0, dir = 1):
         self.name = name
@@ -5,9 +8,11 @@ class Robot:
         self.y = y
         self.dir = dir
         self.img = None
+        self.moveMult = 0
+
 
     def nameFile(self):
-        return f"UR{str(self.dir)}.png"
+        return f"{str(self.name)}{str(self.dir)}.png"
 
     def turnLeft(self):
         self.dir -=1
@@ -21,7 +26,7 @@ class Robot:
 
     def moveRight(self):
         self.x += 46
-    
+
         if self.y > 460:
             self.y = 460
 
@@ -75,6 +80,33 @@ class Robot:
 
         if self.x < 0:
             self.x = 0
+
+    def moveForward(self):
+        if (self.dir == 0 ):
+            self.moveUp()
+
+        if (self.dir == 1):
+            self.moveRight()
+
+        if (self.dir == 2):
+            self.moveDown()
+
+        if (self.dir == 3):
+            self.moveLeft()
+
+    def moveBackward(self):
+        if(self.dir == 0):
+            self.moveDown()
+
+        if(self.dir == 1):
+            self.moveLeft()
+
+        if(self.dir == 2):
+            self.moveUp()
+
+        if(self.dir == 3):
+            self.moveRight()
+
 
 if __name__ == "__main__":
     r2d2 = Robot('R2D2')

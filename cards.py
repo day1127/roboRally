@@ -1,4 +1,5 @@
 import random
+
 """
 move represents type of move
     f = forward
@@ -9,8 +10,7 @@ move represents type of move
 """
 
 class Card:
-    def __init__(self, priority, move, amount):
-        self.priority = priority
+    def __init__(self, move, amount):
         self.move = move
         self.amount = amount
 
@@ -18,7 +18,7 @@ class Card:
     #    return str(self)
 
     def __str__(self):
-        return str((self.priority, self.move.upper(), self.amount))
+        return str((self.move.upper(), self.amount))
 
 class Deck:
     def shuffleList(self):
@@ -26,8 +26,8 @@ class Deck:
         f = open('cards.txt', 'r')
         for line in f:
             line = line.replace('\n', '')
-            priority, move, amount = line.split(', ')
-            newCard = Card(priority, move, amount)
+            move, amount = line.split(', ')
+            newCard = Card(move, amount)
             myDeck.append(newCard)
         random.shuffle(myDeck)
         return myDeck
@@ -38,23 +38,60 @@ class Deck:
 
     def printDeck(self):
         for card in self.cardList:
-            print(card.priority, card.move.upper(), card.amount)
-
-
-
+            print(card.move.upper(), card.amount)
 
     def printCard(self):
+        cardNum2 = 1
+        while cardNum2 != 0:
+            return(self.cardList.pop())
+            cardNum2 -=1
+
+    #def readCard(self):
+
+
+class Hand(Deck):
+    def __init__(self):
+        self.hand = []
+
+    def printHand(self):
+        for x in self.hand:
+            print(str(x))
+
+    def addToHand(self, card):
+        self.hand.append(card)
+
+    def removeFromHand(self, card):
+        self.hand.remove(card)
+
+
+
+
+
+"""
+    def printCardStart(self):
         cardNum = 5
-        print("this is printed via printCard")
+        print("this is printed via printCardStart")
         while cardNum != 0:
             print(self.cardList.pop())
             cardNum -=1
-
-
+"""
 
 
 
 d = Deck()
 d.shuffleList()
-d.printDeck()
-d.printCard()
+#d.printDeck()
+#print(d.printCard())
+#d.readCard()
+
+
+o = Hand()
+
+g = Hand()
+
+if __name__ == "__main__":
+    c=Card('f', '1')
+    c2=Card('l', '1')
+    o.addToHand(c)
+    o.addToHand(c2)
+    o.printHand()
