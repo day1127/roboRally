@@ -15,6 +15,13 @@ pygame.display.set_caption('RoboRally')
 gameBoard = pygame.image.load('graphics/2016doodle.jpg')
 """
 
+
+"""
+make inventory list
+"""
+inventoryListP1 = ["None" for i in range(5)]
+inventoryListP2 = ["None" for i in range(5)]
+
 robot1 = robot.Robot('UR', 0, 0)
 robot1.img = pygame.image.load('graphics/UR1.png')
 robot2 = robot.Robot('UB', 0, 46)
